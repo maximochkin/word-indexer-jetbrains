@@ -19,7 +19,7 @@ public class SearcherController {
     }
 
     @GetMapping("/getFilesByWord")
-    public ResponseEntity<Collection<Long>> getFilesByWord(@RequestParam String word){
+    public ResponseEntity<Collection<String>> getFilesByWord(@RequestParam String word){
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(searcherService.getFilesByWord(word));

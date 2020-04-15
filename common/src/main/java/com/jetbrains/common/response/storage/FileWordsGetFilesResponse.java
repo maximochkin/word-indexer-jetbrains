@@ -4,20 +4,20 @@ import java.io.Serializable;
 import java.util.Collection;
 
 public class FileWordsGetFilesResponse implements Serializable {
-    private Collection<Long> files;
+    private Collection<String> files;
 
     public FileWordsGetFilesResponse() {
     }
 
-    public FileWordsGetFilesResponse(Collection<Long> files) {
+    public FileWordsGetFilesResponse(Collection<String> files) {
         this.files = files;
     }
 
-    public Collection<Long> getFiles() {
+    public Collection<String> getFiles() {
         return files;
     }
 
-    public void setFiles(Collection<Long> files) {
+    public void setFiles(Collection<String> files) {
         this.files = files;
     }
 }

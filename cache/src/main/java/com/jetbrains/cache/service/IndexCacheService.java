@@ -1,6 +1,6 @@
 package com.jetbrains.cache.service;
 
-import com.jetbrains.common.utils.SynchronizedLRUCache;
+import com.jetbrains.common.utils.LRUCache;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -8,10 +8,10 @@ import java.util.Collection;
 
 @Service
 public class IndexCacheService {
-    private final SynchronizedLRUCache<String, Collection<String>> cache;
+    private final LRUCache<String, Collection<String>> cache;
 
     public IndexCacheService(@Value("${cache.word-index.capacity}") int capacity) {
-        this.cache = new SynchronizedLRUCache<>(capacity);
+        this.cache = new LRUCache<>(capacity);
     }
 
     public synchronized Collection<String> getFilesByWord(String word) {
@@ -26,5 +26,9 @@ public class IndexCacheService {
         if (cache.get(word) != null) {
             cache.get(word).add(file);
         }
+    }
+
+    public String printCache() {
+        return cache.toString();
     }
 }

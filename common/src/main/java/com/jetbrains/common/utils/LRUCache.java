@@ -1,14 +1,15 @@
 package com.jetbrains.common.utils;
 
-import java.util.Collections;
+import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
-public class SynchronizedLRUCache<K, V> {
+public class LRUCache<K, V> {
     private final int capacity;
     private final Map<K,V> cache;
 
-    public SynchronizedLRUCache(final int capacity) {
+    public LRUCache(final int capacity) {
         this.capacity = capacity;
         cache = new LinkedHashMap<>(capacity, 0.75f, true) {
             @Override
@@ -28,5 +29,15 @@ public class SynchronizedLRUCache<K, V> {
 
     public int getCapacity() {
         return capacity;
+    }
+
+    @Override
+    public String toString() {
+        return "LRUCache{" +
+                "capacity=" + capacity +
+                ", cache=" + cache.entrySet().stream()
+                    .map(entry -> entry.getKey().toString() + " : " + entry.getValue().toString())
+                    .collect(Collectors.joining("\n")) +
+                '}';
     }
 }

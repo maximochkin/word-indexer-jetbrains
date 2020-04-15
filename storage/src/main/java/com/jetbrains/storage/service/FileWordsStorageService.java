@@ -3,7 +3,7 @@ package com.jetbrains.storage.service;
 import java.util.Collection;
 
 public interface FileWordsStorageService {
-    void save(Long fileId, Collection<String> words);
+    void save(String file, Collection<String> words);
 
-    Collection<Long> getFilesByWord(String word);
+    Collection<String> getFilesByWord(String word);
 }

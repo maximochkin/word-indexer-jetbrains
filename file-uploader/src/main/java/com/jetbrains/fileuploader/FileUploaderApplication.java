@@ -1,4 +1,4 @@
-package com.jetbrains.storage;
+package com.jetbrains.fileuploader;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,10 +8,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients
-public class StorageApplication {
+public class FileUploaderApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(StorageApplication.class, args);
+        SpringApplication.run(FileUploaderApplication.class, args);
     }
 
 }

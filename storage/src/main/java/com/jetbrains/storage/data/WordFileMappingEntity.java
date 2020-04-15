@@ -18,7 +18,7 @@ public class WordFileMappingEntity implements Serializable {
     private Long id;
 
     @Column(nullable = false)
-    private Long fileId;
+    private String file;
 
     @Column(nullable = false)
     private String word;
@@ -26,8 +26,8 @@ public class WordFileMappingEntity implements Serializable {
     public WordFileMappingEntity() {
     }
 
-    public WordFileMappingEntity(Long fileId, String word) {
-        this.fileId = fileId;
+    public WordFileMappingEntity(String file, String word) {
+        this.file = file;
         this.word = word;
     }
 
@@ -39,12 +39,12 @@ public class WordFileMappingEntity implements Serializable {
         this.id = id;
     }
 
-    public Long getFileId() {
-        return fileId;
+    public String getFile() {
+        return file;
     }
 
-    public void setFileId(Long fileId) {
-        this.fileId = fileId;
+    public void setFile(String fileId) {
+        this.file = fileId;
     }
 
     public String getWord() {

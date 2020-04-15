@@ -15,9 +15,11 @@
     <modules>
         <module>cache</module>
         <module>eureka-discovery-service</module>
-        <module>uploader</module>
         <module>api-gateway</module>
         <module>common</module>
+        <module>searcher</module>
+        <module>storage</module>
+        <module>file-uploader</module>
     </modules>
 
     <packaging>pom</packaging>

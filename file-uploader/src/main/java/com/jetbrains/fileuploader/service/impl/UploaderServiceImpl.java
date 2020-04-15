@@ -31,7 +31,9 @@ public class UploaderServiceImpl implements UploaderService {
     }
 
     private void persist(String name, Collection<String> words) {
-        storageServiceClient.persist(name, words);
+        if ( !words.isEmpty() ) {
+            storageServiceClient.persist(name, words);
+        }
     }
 
     private Collection<String> splitIntoWords(MultipartFile file) {

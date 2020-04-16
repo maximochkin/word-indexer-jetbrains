@@ -1,0 +1,1 @@
+docker container rm -f eureka zuul uploader1 uploader2 searcher1 searcher2 cache db storage1 storage2
